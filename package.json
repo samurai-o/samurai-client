@@ -1,5 +1,7 @@
 {
   "private": true,
+  "name": "samurai-client",
+  "version": "0.0.1",
   "scripts": {
     "initial:env": "node scripts/initial.js",
     "start": "umi dev",
