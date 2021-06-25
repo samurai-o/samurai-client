@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
+    "@samuras/samurai-network": "^1.0.1",
     "@umijs/preset-react": "1.x",
     "umi": "^3.4.25"
   },
