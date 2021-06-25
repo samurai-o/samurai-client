@@ -13,8 +13,6 @@ class Auth extends Network {
   @Network.Get('/api/checkLogin')
   checkLogin(params?: any, res?: any) {
     const { data } = res;
-    // 权限校验
-    if (!data) window.location.href = `${window.location.origin}/auth/login`;
     return data;
   }
 }
