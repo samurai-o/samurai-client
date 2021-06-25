@@ -1,0 +1,28 @@
+trigger:
+  - release
+  - master
+
+pool:
+  vmImage: 'ubuntu-latest'
+strategy:
+  matrix:
+    node_12_x:
+      node_version: 12.x
+
+variables:
+  app: /home/web/client
+steps:
+  - script: npm install
+    displayName: 安装依赖
+
+  - script: npm run build
+    displayName: 打包
+
+  - task: CopyFilesOverSSH@0
+    displayName: 上传文件
+    inputs:
+      sshEndpoint: samurai
+      sourceFolder: dist
+      contents: '**'
+      targetFolder: $(app)
+      cleanTargetFolder: true
