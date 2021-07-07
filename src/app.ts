@@ -26,7 +26,8 @@ export async function render(oldRender: any) {
   manager.monitor('end', 'samurailogincheck', () => {
     loading.status(false).then((status) => {
       console.log(status);
-      if (!status) window.location.href = `http://localhost:8000/login`;
+      if (!status)
+        window.location.href = `${window.location.origin}/auth/login`;
       renderFunc();
     });
   });
