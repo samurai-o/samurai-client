@@ -1,10 +1,10 @@
 import WebpackChain from 'webpack-chain';
-import CompressionWebpackPlugin from 'compression-webpack-plugin';
 
 const prodGzipList = ['js', 'css', 'png', 'jpeg', 'gif'];
 
 export default function webpackConfig(webpack: WebpackChain) {
   if (process.env.NODE_ENV === 'production') {
+    const CompressionWebpackPlugin = require('compression-webpack-plugin');
     webpack.plugin('compression-webpack-plugin').use(
       new CompressionWebpackPlugin({
         algorithm: 'gzip', // 指定生成gzip格式
