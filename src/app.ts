@@ -27,7 +27,7 @@ export async function render(oldRender: any) {
     loading.status(false).then(() => {
       console.log(status);
       if (!status)
-        window.location.href = `${window.location.origin}/auth/login`;
+        return (window.location.href = `${window.location.origin}/auth/login`);
       renderFunc();
     });
   });
