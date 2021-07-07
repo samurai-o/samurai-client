@@ -24,10 +24,10 @@ export async function render(oldRender: any) {
     document.body.appendChild(dom);
   });
   manager.monitor('end', 'samurailogincheck', () => {
-    loading.status(false).then((status) => {
+    loading.status(false).then(() => {
       console.log(status);
-      // if (!status)
-      //   window.location.href = `${window.location.origin}/auth/login`;
+      if (!status)
+        window.location.href = `${window.location.origin}/auth/login`;
       renderFunc();
     });
   });
