@@ -32,10 +32,11 @@ export default class Loading extends React.Component<
     };
   }
 
-  status = (status: boolean, task?: () => void) => {
-    this.setState({ loading: status }, () => {
-      // 状态改变后执行的任务
-      if (isFunc(task)) task();
+  status = (status: boolean): Promise<boolean> => {
+    return new Promise((res) => {
+      this.setState({ loading: status }, () => {
+        res(this.state.loading);
+      });
     });
   };
 
@@ -48,7 +49,6 @@ export default class Loading extends React.Component<
   };
 
   render() {
-    console.log(this.state);
     return (
       <LoadingStyled loading={this.state.loading}>
         <LoadingContentStyled>
