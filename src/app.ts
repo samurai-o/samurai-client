@@ -32,6 +32,7 @@ export async function render(oldRender: any) {
     document.body.appendChild(dom);
   });
   manager.monitor('end', 'samurailogincheck', () => {
+    console.log('status', status);
     loading.status(false, () => {
       if (!status) {
         window.location.href = `${window.location.origin}/auth/login`;
