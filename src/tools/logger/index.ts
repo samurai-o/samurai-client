@@ -4,7 +4,7 @@ const tagLevelColor = new Map([
 ]);
 
 // 日志输出
-export function log(level: 'info' | 'message', label: string, value: any) {
+function tag(level: 'info' | 'message', label: string, value: any) {
   if (!window || !window.console) return null;
   console.log(
     `%c${label}%c${value}`,
@@ -14,3 +14,8 @@ export function log(level: 'info' | 'message', label: string, value: any) {
     )};color: #fff;border-top-right-radius: 2px; border-bottom-right-radius: 2px;padding: 2px 10px;`,
   );
 }
+
+export default {
+  info: (label: string, value: any) => tag('info', label, value),
+  tag: (label: string, value: any) => tag('message', label, value),
+};

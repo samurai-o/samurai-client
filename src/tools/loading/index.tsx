@@ -6,6 +6,7 @@ import {
   LoadingCircleStyled,
   LoadingContentStyled,
   LoadingTextStyled,
+  LoadingEyeCircleStyled,
 } from './index.styled';
 
 export type LoadingState = {
@@ -27,7 +28,7 @@ export default class Loading extends React.Component<
     this.state = {
       loading: !!props.loading,
       open: false,
-      content: '',
+      content: '加载中...',
     };
   }
 
@@ -43,7 +44,7 @@ export default class Loading extends React.Component<
    * @param content
    */
   send = (content: string) => {
-    this.setState({ content });
+    // this.setState({ content });
   };
 
   render() {
@@ -51,13 +52,14 @@ export default class Loading extends React.Component<
     return (
       <LoadingStyled loading={this.state.loading}>
         <LoadingContentStyled>
-          <LoadingSvgStyled width="40" height="40">
-            <LoadingCircleStyled cx="20" cy="20" r="15" />
+          <LoadingSvgStyled width="100" height="100">
+            <LoadingCircleStyled cx="50" cy="50" r="14" />
+            <LoadingEyeCircleStyled cx="50" cy="50" r="14" />
           </LoadingSvgStyled>
-          <LoadingTextStyled isMessage={!!this.state.content}>
-            {this.state.content}
-          </LoadingTextStyled>
         </LoadingContentStyled>
+        {/* <LoadingTextStyled isMessage={!!this.state.content}>
+          {this.state.content}
+        </LoadingTextStyled> */}
       </LoadingStyled>
     );
   }

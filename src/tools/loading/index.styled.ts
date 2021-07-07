@@ -10,11 +10,21 @@ export type LoadingTextStyledProps = {
 
 export const keyframe = keyframes`
   40% {
-      stroke-dasharray: 40, 20;   /* 间距改为1/4 */
+      stroke-dasharray: 44, 22;   /* 间距改为1/4 */
   }
-  100% {
-      stroke-dasharray: 44, 25;   /* 间距恢复为1/2 */
+  80%, 100% {
+      stroke-dasharray: 44, 44;   /* 间距恢复为1/2 */
       transform: rotate(720deg);
+  }
+`;
+
+export const eyeKeyframe = keyframes`
+  40% {
+      stroke-dasharray: 0, 77;    /* 间距改为7/8 */
+  }
+  80%, 100% {
+      transform: rotate(675deg);  /* 间距恢复为3/4 */
+      stroke-dasharray: 0, 66;
   }
 `;
 
@@ -53,9 +63,20 @@ export const LoadingSvgStyled = styled.svg`
 export const LoadingCircleStyled = styled.circle`
   fill: none;
   stroke: rgb(72 113 255);
-  stroke-width: 4;
+  stroke-width: 5;
   stroke-linecap: round;
   stroke-dasharray: 44, 44;
   transform-origin: center;
   animation: ${keyframe} 2.3s ease-out infinite;
+`;
+
+export const LoadingEyeCircleStyled = styled.circle`
+  fill: none;
+  stroke: rgb(72 113 255);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 0, 66;
+  transform-origin: center;
+  transform: rotate(-45deg);
+  animation: ${eyeKeyframe} 2.3s ease-in-out infinite;
 `;
