@@ -11,8 +11,10 @@ strategy:
 variables:
   app: /home/web/client
 steps:
-  - script: npm install
+  - task: Npm@1
     displayName: 安装依赖
+    inputs:
+      command: install
 
   - script: npm run build
     displayName: 打包
