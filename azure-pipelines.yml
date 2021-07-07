@@ -15,7 +15,7 @@ steps:
     displayName: 安装依赖
     inputs:
       command: install
-
+      customRegistry: useNpmrc
   - script: npm run build
     displayName: 打包
 
