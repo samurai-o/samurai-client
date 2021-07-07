@@ -35,7 +35,7 @@ export default class Loading extends React.Component<
   status = (status: boolean): Promise<boolean> => {
     return new Promise((res) => {
       this.setState({ loading: status }, () => {
-        res(this.state.loading);
+        res(status);
       });
     });
   };
