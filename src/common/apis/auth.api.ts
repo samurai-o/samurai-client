@@ -2,7 +2,7 @@ import { Network } from '@samuras/samurai-network';
 
 class Auth extends Network {
   constructor() {
-    super();
+    super({ isMock: !!process.env.MOCK });
   }
 
   /**
@@ -10,13 +10,13 @@ class Auth extends Network {
    * @param params
    * @param data
    */
-  @Network.Get('/api/checkLogin')
+  @Network.Get('api/checkLogin')
   checkLogin(params?: any, res?: any) {
     const { data } = res;
     return data;
   }
 
-  @Network.Post('/api/outlogin')
+  @Network.Post('api/outlogin')
   outlogin(params?: any, res?: any) {
     const { data } = res;
     if (data) window.location.href = `${window.location.origin}/auth/login`;

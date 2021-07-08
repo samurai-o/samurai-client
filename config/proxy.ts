@@ -3,7 +3,7 @@ import { ProxyConfig } from './interface';
 const proxy: ProxyConfig = {};
 
 proxy['/api'] = {
-  target: 'http://localhost:3005',
+  target: 'http://www.samurais.cn',
   pathRewrite: {
     '^/api': '',
   },
