@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`avatar 组件 快照测试 1`] = `
+<div
+  className="sc-dkPtyc jjLByl"
+>
+  <div
+    className="sc-bdvvaa gveHwQ"
+    type="middle"
+    width={40}
+  >
+    <img
+      className="sc-gsDJrp eTuZOI"
+      src="http://www.baidu.coms"
+    />
+  </div>
+</div>
+`;

@@ -10,7 +10,6 @@ export async function render(oldRender: any) {
   let loading: Loading;
   let status: boolean; // 登录状态
   const renderFunc = oldRender;
-  const olddom = document.getElementById('loading');
   manager.monitor('start', 'samurailogincheck', () => {
     const dom = document.createElement('div');
     dom.id = 'loading';
@@ -25,7 +24,6 @@ export async function render(oldRender: any) {
   });
   manager.monitor('end', 'samurailogincheck', () => {
     loading.status(false).then(() => {
-      console.log(status);
       if (!status)
         return (window.location.href = `${window.location.origin}/auth/login`);
       renderFunc();

@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`avatar 组件 快照测试 1`] = `
+<div
+  className="sc-bdvvaa fKRyFQ"
+>
+  <div
+    onClick={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOver={[Function]}
+  >
+    1
+  </div>
+  <div
+    className="sc-gsDJrp xYbNh"
+    onMouseLeave={[Function]}
+    onMouseOver={[Function]}
+  >
+    <div
+      className="sc-dkPtyc liIQBr"
+    >
+      <ul
+        className="sc-hKwCoD eAINRV"
+      >
+        <li
+          className="sc-eCImvq dontXv"
+          onClick={[Function]}
+        >
+          文档
+        </li>
+        <li
+          className="sc-eCImvq dontXv"
+          onClick={[Function]}
+        >
+          文档2
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

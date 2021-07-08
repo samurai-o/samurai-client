@@ -15,6 +15,13 @@ class Auth extends Network {
     const { data } = res;
     return data;
   }
+
+  @Network.Get('/outlogin')
+  outlogin(params?: any, res?: any) {
+    const { data } = res;
+    if (data) window.location.href = `${window.location.origin}/auth/login`;
+    return data;
+  }
 }
 
 export default new Auth();

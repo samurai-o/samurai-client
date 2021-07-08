@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image 组件 快照测试 1`] = `
+<div
+  className="sc-bdvvaa hVwtmA"
+>
+  <ul
+    className="sc-gsDJrp dDCrYl"
+  >
+    <li
+      className="sc-dkPtyc eiaZnz"
+      onClick={[Function]}
+    >
+      文档
+    </li>
+    <li
+      className="sc-dkPtyc eiaZnz"
+      onClick={[Function]}
+    >
+      组件
+    </li>
+  </ul>
+</div>
+`;
