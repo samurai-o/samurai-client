@@ -33,13 +33,13 @@ export type MenuItem = 'loginout' | 'organizations';
 
 export const Header = forwardRef((props: THeaderProps, ref: any) => {
   const [isScroll, setIsScroll] = useState(false);
+  const { scrollHeight = 10 } = props;
+
   /** 用户选择项 */
   const handlers = new Map<MenuItem, any>([
     ['loginout', authApi.outlogin],
     ['organizations', () => history.push('/settings/organizations')],
   ]);
-
-  const { scrollHeight = 10 } = props;
 
   const headerColorChange = () => {
     if (window.pageYOffset > scrollHeight) {
@@ -49,19 +49,12 @@ export const Header = forwardRef((props: THeaderProps, ref: any) => {
     }
   };
 
-  useEffect(() => {
-    window.addEventListener('scroll', headerColorChange);
-    return () => {
-      window.removeEventListener('scroll', headerColorChange);
-    };
-  }, []);
-
   // 应用logo
   const logo = useMemo(() => {
     if (typeof props.logo !== 'string' || !props.logo) return null;
     return (
       <Link href="http://www.baidu.com">
-        <Image src={props.logo} type="small" width={80} />
+        <Image src={props.logo} type="small" width={30} />
       </Link>
     );
   }, [props.logo]);
@@ -70,6 +63,13 @@ export const Header = forwardRef((props: THeaderProps, ref: any) => {
     const handler = handlers.get(key);
     if (isFunc(handler)) handler();
   };
+
+  useEffect(() => {
+    window.addEventListener('scroll', headerColorChange);
+    return () => {
+      window.removeEventListener('scroll', headerColorChange);
+    };
+  }, []);
 
   return (
     <HeaderContainer ref={ref} isScroll={isScroll}>

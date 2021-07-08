@@ -8,7 +8,7 @@ export const HeaderContainer = styled.div<any>`
   box-sizing: border-box;
   display: flex;
   border-radius: 10px;
-  color: #fff;
+  color: #000;
   flex-direction: row;
   align-items: center;
   transition: all 500ms ease 0s;
@@ -16,8 +16,7 @@ export const HeaderContainer = styled.div<any>`
     !isScroll
       ? 'rgb(0 0 0 / 30%) 6px 0px 16px -8px, rgb(0 0 0 / 12%) 9px 0px 28px 0px'
       : 'none'};
-  background-color: ${({ isScroll }) =>
-    !isScroll ? 'rgb(72, 113, 255)' : 'transparent'};
+  background-color: ${({ isScroll }) => (!isScroll ? '#fff' : 'transparent')};
 `;
 
 export const NavigationContainer = styled.div`

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Header } from '@/common/header';
-import logo from '@/assets/logtext.png';
+import logo from '@/assets/logo.png';
 import { CoreLocationProps } from '@/common/interfaces/core.interface';
 import { LayoutBase, LayoutContent } from './index.styled';
 

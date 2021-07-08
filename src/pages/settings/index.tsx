@@ -1,7 +1,12 @@
 import React from 'react';
 import { CoreLocationProps } from '@/common/interfaces/core.interface';
-import { SettingsStyled } from './index.styled';
+import { SettingsNavigationStyled, SettingsStyled } from './index.styled';
 
 export default function Settings(props: CoreLocationProps) {
-  return <SettingsStyled>{props.children}</SettingsStyled>;
+  return (
+    <SettingsStyled>
+      <SettingsNavigationStyled>1</SettingsNavigationStyled>
+      {props.children}
+    </SettingsStyled>
+  );
 }
