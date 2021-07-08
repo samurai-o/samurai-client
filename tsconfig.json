@@ -21,6 +21,7 @@
     "mock/**/*",
     "src/**/*",
     "config/**/*",
+    "scripts/*",
     ".umirc.ts",
     "typings.d.ts"
   ],

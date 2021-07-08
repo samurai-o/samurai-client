@@ -5,9 +5,9 @@ import { MenuContainer, MenuItem, MenuList } from './container';
 // 布局方式
 export type Overall = 'horizontal' | 'vertical';
 
-export type MenuProps = {
+export type MenuProps<D = string> = {
   overall?: Overall;
-  onClick?: (key: string) => void;
+  onClick?: (key: D) => void;
   children?: JSX.Element | JSX.Element[];
 };
 
@@ -15,7 +15,7 @@ export type MenuProps = {
  * 菜单数据配置
  * @returns
  */
-export function Menu(props: MenuProps) {
+export function Menu<D = any>(props: MenuProps<D>) {
   const { overall = 'vertical', children = [], onClick } = props;
 
   // 选项节点

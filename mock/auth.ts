@@ -10,4 +10,12 @@ export default {
       message: '成功',
     });
   },
+  /** 退出 */
+  'POST /mock/api/outlogin': (_: any, res: Response) => {
+    res.json({
+      code: 1,
+      data: true,
+      message: '成功',
+    });
+  },
 };

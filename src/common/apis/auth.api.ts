@@ -16,6 +16,12 @@ class Auth extends Network {
     return data;
   }
 
+  /**
+   * 退出
+   * @param params
+   * @param res
+   * @returns
+   */
   @Network.Post('api/outlogin')
   outlogin(params?: any, res?: any) {
     const { data } = res;

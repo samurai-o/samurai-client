@@ -1,9 +1,11 @@
 import React, { forwardRef, useEffect, useMemo, useState } from 'react';
 import { HeaderContainer, NavigationContainer } from './container';
 import { Menu, Link, Image, Dropdown, Text } from '@/components';
-import { AdminBtn } from '../admin';
 import avatar from '@/assets/defaultAvatar.jpeg';
 import { authApi } from '@/common/apis';
+import { history } from 'umi';
+import { AdminBtn } from '../admin';
+import { isFunc } from '@frade-sam/samtools';
 
 export function Navigation() {
   return (
@@ -26,8 +28,16 @@ export type HeaderContainerProps = {
   id: number;
 };
 
+/** 操作可以 */
+export type MenuItem = 'loginout' | 'organizations';
+
 export const Header = forwardRef((props: THeaderProps, ref: any) => {
   const [isScroll, setIsScroll] = useState(false);
+  /** 用户选择项 */
+  const handlers = new Map<MenuItem, any>([
+    ['loginout', authApi.outlogin],
+    ['organizations', () => history.push('/settings/organizations')],
+  ]);
 
   const { scrollHeight = 10 } = props;
 
@@ -51,16 +61,14 @@ export const Header = forwardRef((props: THeaderProps, ref: any) => {
     if (typeof props.logo !== 'string' || !props.logo) return null;
     return (
       <Link href="http://www.baidu.com">
-        <Image src={props.logo} type="small" width={135} />
+        <Image src={props.logo} type="small" width={80} />
       </Link>
     );
   }, [props.logo]);
 
-  const onClick = async (key: string) => {
-    console.log(key);
-    if (key === 'loginout') {
-      authApi.outlogin();
-    }
+  const onClick = async (key: MenuItem) => {
+    const handler = handlers.get(key);
+    if (isFunc(handler)) handler();
   };
 
   return (
@@ -70,19 +78,19 @@ export const Header = forwardRef((props: THeaderProps, ref: any) => {
       <Dropdown
         trigger="hover"
         menus={
-          <Menu overall="vertical" onClick={onClick}>
-            <Menu.Item tag="docs">
-              <i
+          <Menu<MenuItem> overall="vertical" onClick={onClick}>
+            <Menu.Item tag="organizations">
+              {/* <i
                 className="iconfont iconpeople-network-full"
                 style={{ marginRight: 5 }}
-              ></i>
-              <Text type="text" blod>
+              ></i> */}
+              <Text type="text" color="#505050" blod>
                 组织
               </Text>
             </Menu.Item>
             <Menu.Item tag="loginout">
-              <i className="iconfont icontuichu" style={{ marginRight: 5 }}></i>
-              <Text type="text" blod>
+              {/* <i className="iconfont icontuichu" style={{ marginRight: 5 }}></i> */}
+              <Text type="text" color="#505050" blod>
                 退出
               </Text>
             </Menu.Item>

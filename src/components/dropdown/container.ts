@@ -27,7 +27,7 @@ export const DropdownBoxContainer = styled.div<DropdownBoxStyleProps>`
   box-shadow: 0px 4px 8px rgb(0 0 0 / 10%);
   backface-visibility: hidden;
   border-radius: 4px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgb(0 0 0 / 6%);
   pointer-events: ${({ show }) => (!!show ? 'all' : 'none')};
   opacity: ${({ show }) => Number(!!show)};
   transform: ${({ show }) =>
@@ -48,7 +48,7 @@ export const DropdownBoxContainer = styled.div<DropdownBoxStyleProps>`
     transform: translateY(4px) rotate(45deg);
     width: 8px;
     height: 8px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgb(0 0 0 / 6%);
     border-right: none;
     border-bottom: none;
     background-color: #fff;

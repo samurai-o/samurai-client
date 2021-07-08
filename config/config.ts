@@ -1,6 +1,7 @@
 import { defineConfig } from 'umi';
 import packageJson from '../package.json';
 import proxy from './proxy';
+import routes from './routes';
 import webpackConfig from './webpack.config';
 
 export default defineConfig({
@@ -21,12 +22,6 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
-  routes: [
-    {
-      path: '/',
-      component: '@/layouts/index',
-      routes: [{ path: '/home', component: '@/pages' }],
-    },
-  ],
+  routes: routes,
   fastRefresh: {},
 });
