@@ -30,7 +30,7 @@
     "@ant-design/pro-layout": "^6.5.0",
     "@apollo/client": "^3.3.21",
     "@frade-sam/samtools": "^1.0.18",
-    "@samuras/samurai-network": "^1.0.4",
+    "@samuras/samurai-network": "^1.0.5",
     "@umijs/preset-react": "1.x",
     "graphql": "^15.5.1",
     "script-import-core": "0.0.47",
