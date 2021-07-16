@@ -1,4 +1,15 @@
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+
+export const GlobalStyled = createGlobalStyle`
+  & ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  & li {
+    list-style: none;
+  }
+`;
 
 export type LayoutContentProps = {
   height: number;
@@ -6,6 +17,7 @@ export type LayoutContentProps = {
 
 /** layout骨架 */
 export const LayoutBase = styled.div`
+  background: #f2f5f7;
   &::-webkit-scrollbar {
     display: none;
   }
