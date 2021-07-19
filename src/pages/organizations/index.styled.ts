@@ -6,7 +6,13 @@ export const OrganizationListStyled = styled.ul``;
 
 export const OrganizationItemStyled = styled.li``;
 
-export const OrganizationHeaderStyled = styled.div``;
+/** 组织编辑头部 */
+export const OrganizationHeaderStyled = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
 
 export const OrganizationHeaderTitleStyled = styled.span``;
 

@@ -21,7 +21,6 @@ const authMiddleware = new ApolloLink((operation, forward) => {
       authorization: authApi.authorization,
     },
   }));
-  console.log(operation.getContext());
   return forward(operation);
 });
 

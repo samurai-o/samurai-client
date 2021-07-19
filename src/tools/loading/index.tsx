@@ -49,8 +49,9 @@ export default class Loading extends React.Component<
   };
 
   render() {
+    console.log(this.props);
     return (
-      <LoadingStyled loading={this.state.loading}>
+      <LoadingStyled loading={this.props.loading}>
         <LoadingContentStyled>
           <LoadingSvgStyled width="100" height="100">
             <LoadingCircleStyled cx="50" cy="50" r="14" />

@@ -13,7 +13,6 @@ import { SettingsNavs } from './settingsNavs';
 
 export default function Settings(props: CoreLocationProps) {
   const { loading, error, data } = useQuery(queryOrganization);
-  console.log(loading, error, data);
   return (
     <SettingsStyled>
       <SettingsUserHeaderStyled>2</SettingsUserHeaderStyled>
